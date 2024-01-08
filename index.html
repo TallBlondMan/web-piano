@@ -71,47 +71,6 @@
         <div class="piano-key" data-note='B4'><span class="note-name">B</span></div>
         <div class="piano-key" data-note='C5'><span class="note-name">c</span></div>
     </div>
-
-    <!-- <script>
-        document.querySelector('.piano-key').addEventListener('click', async () => {
-            await Tone.start()
-            // your page is ready to play sounds
-        })
-
-        const pianoKeys = document.querySelectorAll('.piano-key');
-        pianoKeys.forEach(key => {
-            key.addEventListener('click', function() {
-                const note = this.dataset.note; // Retrieve the note from the data-note attribute
-                playNote(note); // Call the playNote function with the pressed note
-            });
-        });
-        document.addEventListener('keydown', function(event) {
-        // Define a mapping of keyboard keys to piano keys
-        const keyMap = {
-            'a': 'C4',
-            'w': 'C#4',
-            's': 'D4',
-            'e': 'D#4',
-            'd': 'E4',
-            'f': 'F4',
-            't': 'F#4',
-            'g': 'G4',
-            'y': 'G#4',
-            'h': 'A4',
-            'u': 'A#4',
-            'j': 'B4',
-            'k': "c5"
-            // Add more keys as needed
-        };
-
-        // Check if the pressed key corresponds to a piano key
-        const pressedKey = event.key.toLowerCase();
-        if (keyMap.hasOwnProperty(pressedKey)) {
-            const note = keyMap[pressedKey];
-            playNote(note);
-        }
-    });
-    </script> -->
     <script src="app.js"></script>
 </body>
 </html>
