@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano App</title>
+    <script src="https://cdn.jsdelivr.net/npm/tone@14.7.77"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        #piano-container {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .piano-key {
+            position: relative;
+            width: 50px;
+            height: 200px;
+            border: 1px solid #000;
+            /* margin: 5px; */
+            cursor: pointer;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .black-key {
+            position: relative;
+            width: 30px;
+            height: 120px;
+            margin: 0 -15px;
+            background-color: black;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+
+        .note-name {
+            margin-top: auto;
+        }
+
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="output">Press a key...</div>
+    
+    <div id="piano-container">
+        <div class="piano-key" data-note='C4'><span class="note-name">C</span></div>
+        <div class="piano-key black-key" data-note='C#4'><span class="note-name">C#</span></div>
+        <div class="piano-key" data-note='D4'><span class="note-name">D</span></div>
+        <div class="piano-key black-key" data-note='D#4'><span class="note-name">D#</span></div>
+        <div class="piano-key" data-note='E4'><span class="note-name">E</span></div>
+        <div class="piano-key" data-note='F4'><span class="note-name">F</span></div>
+        <div class="piano-key black-key" data-note='F#4'><span class="note-name">F#</span></div>
+        <div class="piano-key" data-note='G4'><span class="note-name">G</span></div>
+        <div class="piano-key black-key" data-note='G#4'><span class="note-name">G#</span></div>
+        <div class="piano-key" data-note='A4'><span class="note-name">A</span></div>
+        <div class="piano-key black-key" data-note='A#4'><span class="note-name">A#</span></div>
+        <div class="piano-key" data-note='B4'><span class="note-name">B</span></div>
+        <div class="piano-key" data-note='C5'><span class="note-name">c</span></div>
+    </div>
+
+    <!-- <script>
+        document.querySelector('.piano-key').addEventListener('click', async () => {
+            await Tone.start()
+            // your page is ready to play sounds
+        })
+
+        const pianoKeys = document.querySelectorAll('.piano-key');
+        pianoKeys.forEach(key => {
+            key.addEventListener('click', function() {
+                const note = this.dataset.note; // Retrieve the note from the data-note attribute
+                playNote(note); // Call the playNote function with the pressed note
+            });
+        });
+        document.addEventListener('keydown', function(event) {
+        // Define a mapping of keyboard keys to piano keys
+        const keyMap = {
+            'a': 'C4',
+            'w': 'C#4',
+            's': 'D4',
+            'e': 'D#4',
+            'd': 'E4',
+            'f': 'F4',
+            't': 'F#4',
+            'g': 'G4',
+            'y': 'G#4',
+            'h': 'A4',
+            'u': 'A#4',
+            'j': 'B4',
+            'k': "c5"
+            // Add more keys as needed
+        };
+
+        // Check if the pressed key corresponds to a piano key
+        const pressedKey = event.key.toLowerCase();
+        if (keyMap.hasOwnProperty(pressedKey)) {
+            const note = keyMap[pressedKey];
+            playNote(note);
+        }
+    });
+    </script> -->
+    <script src="app.js"></script>
+</body>
+</html>
