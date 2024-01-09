@@ -1,6 +1,6 @@
 Tone.start();
 
-const synth = new Tone.MembraneSynth().toDestination();
+const synth = new Tone.PolySynth(Tone.Synth).toDestination();
 const keyState = {};
 
 document.querySelector('.piano-key').addEventListener('click', async () => {
@@ -15,7 +15,7 @@ function playNote(note) {
 function stopNote(note) {
     console.log(`Note released: ${note}`);
 
-    synth.triggerRelease();
+    synth.triggerRelease(note);
 }
 
 const pianoKeys = document.querySelectorAll('.piano-key');
